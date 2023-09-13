@@ -1,0 +1,6 @@
+1. Tại sao cần file .env
+- Để lưu những thông tin nhạy cảm
+- file env được sử dụng trong node để lưu những key api, url của csdl
+2. Sự khác nhau giữa config và env 
+- tệp config lưu được nhiều dạng (JSON...), kiểm soát package
+- env để lưu những thông tin nhạy cảm 
