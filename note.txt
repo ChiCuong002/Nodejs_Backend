@@ -1,6 +1,22 @@
-1. Tại sao cần file .env
+1. Tại sao cần file .env ?
 - Để lưu những thông tin nhạy cảm
 - file env được sử dụng trong node để lưu những key api, url của csdl
-2. Sự khác nhau giữa config và env 
+
+2. Sự khác nhau giữa config và env ?
 - tệp config lưu được nhiều dạng (JSON...), kiểm soát package
-- env để lưu những thông tin nhạy cảm 
+- env để lưu những thông tin nhạy cảm
+
+3. Cách tạo token một cách an toàn ?
+- sử dụng package crypto
+- tạo publicKey và privateKey => const {privateKey, publicKey} = crypto.generateKeyPairSync('rsa', { modulusLength: 4096 })
+- privateKey sử dụng để tạo token, publicKey để access token
+
+4. 'refreshToken' trong model keyToken ?
+- Để deteche những token đã bị đánh cắp
+- Tăng tính bảo mật cho hệ thống
+
+5. publicKey vì sao cần chuyển sang String ?
+- publicKey được sinh ra từ thuật toán bất đối xứng => ở dạng buffer chưa được hash => nếu lưu sẽ bị lỗi
+
+6. payload là gì ?
+- chứa những thông tin vận chuyển từ hệ thống này qua hệ thống khác thông qua token
