@@ -3,16 +3,15 @@
 const keytokenModel = require("../models/keytoken.model")
 
 class KeyTokenService {
-    static createKeyToken = async ({userId, publicKey}) => {
+    static createKeyToken = async ({userId, publicKey, privateKey}) => {
         try {
-            console.log(`userId: ${userId}, publicKey: ${publicKey}`)
-            const publicKeyString = publicKey.toString()
+            //const publicKeyString = publicKey.toString() cách 1
             const tokens = await keytokenModel.create({
                 user: userId,
-                publicKey: publicKeyString
+                publicKey, 
+                privateKey
             })
-            console.log("Tokens created:", tokens);
-            return tokens ? publicKeyString : null
+            return tokens ? tokens.publicKey : null
         } catch (error) {
             return error
         }

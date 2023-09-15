@@ -6,6 +6,6 @@ Content-Type: application/json
 
 {
     "name": "Shop ban hoa",
-    "email": "shoptest@gmail.com",
+    "email": "shoptest03@gmail.com",
     "password": "abc123"
 }

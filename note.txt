@@ -10,6 +10,7 @@
 - sử dụng package crypto
 - tạo publicKey và privateKey => const {privateKey, publicKey} = crypto.generateKeyPairSync('rsa', { modulusLength: 4096 })
 - privateKey sử dụng để tạo token, publicKey để access token
+* Có thể dùng cách 2 đơn giản hơn * 
 
 4. 'refreshToken' trong model keyToken ?
 - Để deteche những token đã bị đánh cắp
@@ -20,3 +21,10 @@
 
 6. payload là gì ?
 - chứa những thông tin vận chuyển từ hệ thống này qua hệ thống khác thông qua token
+
+7. ***
+- privateKey không lưu vào database, nhưng publicKey thì có.
+- publicKey phải chuyển ra hash string để lưu vào db chứ rsa không thể lưu trực tiếp.
+=> khi lấy publicKey từ db thì phải chuyển về lại ban đầu
+
+8. 
