@@ -6,7 +6,7 @@ const DOCUMENT_NAME = 'Apikey'
 const COLLECTION_NAME = 'Apikeys'
 
 // Declare the Schema of the Mongo model
-var apiKeySchema = new mongoose.Schema({
+var apiKeySchema = new Schema({
     key:{
         type:String,
         required:true,

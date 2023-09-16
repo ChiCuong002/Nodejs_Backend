@@ -1,6 +1,6 @@
 'use strict'
 
-const { findById } = require("../models/shop.model")
+const { findById } = require("../services/apikey.service")
 
 const HEADER = {
     API_KEY: 'x-api-key',
@@ -19,7 +19,7 @@ const apiKey = async (req, res, next) => {
         const objKey = await findById(key)
         if(!objKey){
             return res.status(403).json({
-                message: `Can't not find objKey Error`
+                message: `Can't not find objKey`
             })
         }
         req.objKey = objKey
@@ -29,6 +29,26 @@ const apiKey = async (req, res, next) => {
     }
 }
 
+const permission = ( permission ) => {
+    return (req, res, next) => {
+        if(!req.objKey.permissions){
+            return res.status(403).json({
+                message: 'permission denied 1'
+            })
+        }
+        console.log(req.objKey)
+        console.log('permission::', req.objKey.permissions)
+        const validPermission = req.objKey.permissions.includes(permission.toString())
+        if(!validPermission){
+            return res.status(403).json({
+                message: 'permission denied 2'
+            })
+        }
+        return next()
+    }
+}
+
 module.exports = {
-    apiKey
+    apiKey,
+    permission
 }

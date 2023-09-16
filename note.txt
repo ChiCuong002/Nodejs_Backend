@@ -27,4 +27,5 @@
 - publicKey phải chuyển ra hash string để lưu vào db chứ rsa không thể lưu trực tiếp.
 => khi lấy publicKey từ db thì phải chuyển về lại ban đầu
 
-8. 
+8. * trình bao đóng (Closures) trong Javascript
+- trả về một hàm có thể sử dụng các biến của hàm cha
