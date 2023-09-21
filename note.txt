@@ -29,3 +29,8 @@
 
 8. * trình bao đóng (Closures) trong Javascript
 - trả về một hàm có thể sử dụng các biến của hàm cha
+
+9. hàm login ở AccessService có refreshToken để làm gì ?
+- khi người dùng login lại, nhưng có cookie rồi thì ở font-end cũng mang cookie đó đi theo
+để biết người dùng này đang sử dụng token này. Và bây giờ muốn login lại thì xóa token cũ đi
+để khỏi truy vấn db 

@@ -10,3 +10,6 @@ x-api-key: 44118c00b42d464c9d222ae34d09402435e3c240cc6653902474cdae03661f4ab0fb9
     "email": "shoptest04@gmail.com",
     "password": "abc123"
 }
+
+### login
+POST {{url_dev}}shop/login
